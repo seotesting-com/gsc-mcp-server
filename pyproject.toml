@@ -1,0 +1,13 @@
+[project]
+name = "gsc-mcp-server"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "google-api-python-client>=2.0.0",
+    "google-auth-httplib2>=0.1.0",
+    "google-auth-oauthlib>=0.4.1",
+    "mcp[cli]>=1.4.0",
+    "pandas>=2.0.0",
+]
