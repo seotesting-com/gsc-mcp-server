@@ -1,3 +1,17 @@
+# 🚀 Introduction: Setting Up MCP Server  
+
+In this tutorial, we'll walk through the essential steps to set up an MCP server and integrate it with Claude Desktop for Google Search Console analytics.  
+
+## 🔹 What We'll Cover:  
+1. **Generate Google Cloud Credentials** – Create and download a service account JSON key to authenticate API access.  
+2. **Install Required Tools** – Ensure Python, pip, uv, and Git (optional) are installed on your system.  
+3. **Set Up the MCP Server** – Clone the repository, configure your environment, and install the MCP server.  
+4. **Enable Search Console Insights** – Verify that the MCP server is running correctly in Claude Desktop and start using advanced search analytics tools.  
+
+By the end of this guide, you'll be able to run queries, visualize data, and optimize your website’s search performance with ease. Let's get started! 🚀
+
+---
+
 # 🎯 Part 1 - Generate a JSON Credentials File for Google Cloud Console  
 
 Follow these steps to create and download a **service account JSON key** from Google Cloud Console.  
@@ -9,7 +23,22 @@ Follow these steps to create and download a **service account JSON key** from Go
 
 ## 📌 2. Select Your Project  
 - Click on the **project selector** at the top.  
+![image](https://github.com/user-attachments/assets/642ec31f-ae73-4a3f-b031-99c73af6803c)
+
 - Select an **existing project** or create a **new one**.  
+
+### If you're creating a new project:
+
+#### Enable Search Console API
+- Make sure your new project is selected 
+- Click on APIs and Services:
+![image](https://github.com/user-attachments/assets/75a33e90-b552-44a0-ab9e-8fd040762325)
+
+- Find Google Search Console API (you may need to search at the top)
+![image](https://github.com/user-attachments/assets/891eb3e2-5370-4770-a676-423d4c9fc437)
+
+- Click 'Enable'
+- Return to the dashboard (click the Google Cloud icon)
 
 
 ## 📌 3. Open the IAM & Admin Section  
@@ -37,6 +66,7 @@ Follow these steps to create and download a **service account JSON key** from Go
 3. Click **"Add Key" > "Create New Key"**.  
 4. Choose **"JSON"** format and click **"Create"**.  
 5. **✅ The JSON file will download automatically.**  
+6. Copy the path of JSON file (right click + 'Copy as path')
 
 ---
 
@@ -44,17 +74,7 @@ Follow these steps to create and download a **service account JSON key** from Go
 
 Before you begin working with the project, ensure that you have the necessary tools installed. Follow these steps to check if everything is ready.
 
-## 📌 1. Check if Git is Installed
-
-Check if Python is installed on your system by running the following command:
-
-### On **Linux/macOS/Windows**:
-```sh
-git --version
-```
-If Git is installed, you will see the version number. If not, download and install it from 🔗 [Download Git](https://git-scm.com/downloads)  
-
-## 📌 2. Check if Python is Installed
+## 📌 1. Check if Python is Installed
 
 Check if Python is installed on your system by running the following command:
 
@@ -73,7 +93,7 @@ pip --version
 ```
 If pip is not installed, follow the official installation guide 🔗 [Download pip](https://pip.pypa.io/en/stable/installation/)
 
-## 📌 3. Check if uv is Installed
+## 📌 2. Check if uv is Installed
 uv is a Python package and project manager. To check if it's installed, run the following command:
 
 ### On **Linux/macOS/Windows**:
@@ -82,9 +102,19 @@ uv --version
 ```
 If uv is not installed, follow the official installation guide 🔗 [Download uv](https://docs.astral.sh/uv/getting-started/installation/)
 
-## 📌 4. Check if Claude Desktop is Installed
+## 📌 3. Check if Claude Desktop is Installed
 
 If Claude Desktop is not installed, follow the instructions in the official Claude installation guide.
+
+## 📌 4. Check if Git is Installed (optional)
+
+Check if Git is installed on your system by running the following command:
+
+### On **Linux/macOS/Windows**:
+```sh
+git --version
+```
+If Git is installed, you will see the version number. If not, you can still download the program files, or you can download and install Git from 🔗 [Download Git](https://git-scm.com/downloads)  
 
 ---
 
@@ -94,47 +124,88 @@ If Claude Desktop is not installed, follow the instructions in the official Clau
 
 ### 1. Clone the Repository
 
+Open a new terminal in the folder where the files will be downloaded to. Run the following commands:
+
 ```bash
-git clone <https://github.com/yourusername/mcp-test-v3.git>
-cd <mcp-test-v3>
+git clone <enter-repository-url>
+cd <repository-name>
 ```
+
+#### If you don't have Git installed:
+
+- Download the ZIP file:
+
+![image](https://github.com/user-attachments/assets/10cdbb1f-c58e-4218-b5cc-c8f858f489c7)
+
 
 ### 2. Create and Activate a Virtual Environment
 
 ```bash
 # Windows
-python -m venv .venv
+uv venv
 .venv\Scripts\activate
 
 # macOS/Linux
-python -m venv .venv
+uv venv
 source .venv/bin/activate
 ```
 
-### 3. Install Dependencies
+### 3. Install MCP Server 
 
-```bash
-pip install -r requirements.txt
-```
-
-### 4. Install MCP Server 
+Add the path to your JSON credentials file and run the following command:
 
 ```bash
 mcp install server.py -v GOOGLE_APPLICATION_CREDENTIALS=<path to credentials file>
 ```
 ### 5. Restart Claude Desktop
 
-## Usage
+You may need to end Claude tasks in the task manager. 
 
-Once installed in Claude Desktop, you can use the tool by asking Claude to perform various search console analytics tasks:
+---
 
-### Example Prompts
+# 🎯 Part 4 - Get Search Console Insights 
+
+Open Claude Desktop. If the MCP server has been configured correctly, you should be able to see 5 additional tools available in the chat box:
+![image](https://github.com/user-attachments/assets/8fe45b5b-afc1-4c39-849d-853297cab1d6)
+
+You can use the tools by asking Claude to perform various search console analytics tasks:
+
+### Getting Started Prompts
 
 - "List all my verified sites in Google Search Console"
 - "Show me search analytics for example.com from January 1 to January 31, 2025"
 - "Compare search performance for example.com between last month and the previous month"
 - "What are my top 10 pages by clicks for the last 30 days?"
 - "Show me search trends by week for the last 3 months"
+
+### Data Visualization Prompts
+
+- "Generate a bar chart of my top 5 performing pages by clicks for the past month"
+- "Create a line graph showing impression trends over the last 90 days"
+- "Visualize the CTR comparison between mobile and desktop traffic for my site"
+- "Plot a heatmap of search performance by country for example.com"
+- "Create a pie chart showing the distribution of traffic by device type"
+- "Generate a scatter plot comparing CTR vs. position for my top 50 queries"
+- "Show me a visual breakdown of traffic sources by search type (web, image, video)"
+- "Create a stacked area chart showing clicks and impressions over time"
+- "Visualize week-over-week search performance changes with a comparison chart"
+- "Generate a visual report of my site's SEO performance with multiple graphs"
+
+### Search Console Analysis Prompts
+
+- "Identify keywords with high impressions but low CTR that I can optimize"
+- "Show me pages that have dropped in rankings over the last month"
+- "Find new keywords that my site started ranking for in the past 30 days"
+- "Analyze which mobile pages have the biggest performance gap compared to desktop"
+- "Show me queries where I rank on page 2 (positions 11-20) that I could push to page 1"
+- "Identify seasonal trends in my search traffic over the past year"
+- "Compare organic traffic before and after my site redesign on March 1st"
+- "Show me which countries have the highest growth potential based on impressions vs. clicks"
+- "Analyze the correlation between average position and CTR for my top 100 queries"
+- "Generate a prioritized list of optimization opportunities based on potential traffic gains"
+
+Before invoking a tool, Claude will ask permission. You should click one of the 'allow' options to use the MCP server:
+![image](https://github.com/user-attachments/assets/6b63b312-c1c2-46ff-ab75-b3d640fe6a2a)
 
 ## Available Tools
 
