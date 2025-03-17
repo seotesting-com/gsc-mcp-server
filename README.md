@@ -1,6 +1,8 @@
 # 🚀 Introduction: Setting Up MCP Server  
 
-In this tutorial, we'll walk through the essential steps to set up an MCP server and integrate it with Claude Desktop for Google Search Console analytics.  
+In this tutorial, we’ll walk you through the process of setting up your own MCP [Model Context Protocol](https://modelcontextprotocol.io/introduction) server, adding it to Claude Desktop, and integrating it with Google Search Console (GSC) data.
+
+Let’s get started! 🚀
 
 ## 🔹 What We'll Cover:  
 1. **Generate Google Cloud Credentials** – Create and download a service account JSON key to authenticate API access.  
@@ -10,6 +12,18 @@ In this tutorial, we'll walk through the essential steps to set up an MCP server
 
 By the end of this guide, you'll be able to run queries, visualize data, and optimize your website’s search performance with ease. Let's get started! 🚀
 
+## 🔹 What You Need to Know Before Starting
+This tutorial is designed to be beginner-friendly, and you don’t need any advanced technical skills. However, you should be comfortable running commands in the command line (also known as the terminal or command prompt).
+
+Throughout this guide, you'll enter commands like:
+
+```sh
+python --version
+git clone <repository-url>
+```
+If you’ve never used the command line before, don’t worry! Just follow the instructions step by step, and you'll be good to go.
+
+That’s all you need—let’s get started! 🚀
 ---
 
 # 🎯 Part 1 - Generate a JSON Credentials File for Google Cloud Console  
@@ -78,18 +92,28 @@ Before you begin working with the project, ensure that you have the necessary to
 
 Check if Python is installed on your system by running the following command:
 
-### On **Linux/macOS/Windows**:
+### On **Windows**:
 ```sh
 python --version
 ```
+### On **Linux/macOS**:
+```sh
+python3 --version
+```
+
 If Python is installed, you will see the version number. If not, download and install it from 🔗 [Download Python](https://www.python.org/downloads/)  
 
 ## 📌 3. Check if pip is Installed
 pip is the package manager for Python. To check if it's installed, run the following command:
 
-### On **Linux/macOS/Windows**:
+### On **Windows**:
 ```sh
 pip --version
+```
+
+### On **Linux/macOS**:
+```sh
+pip3 --version
 ```
 If pip is not installed, follow the official installation guide 🔗 [Download pip](https://pip.pypa.io/en/stable/installation/)
 
@@ -104,7 +128,7 @@ If uv is not installed, follow the official installation guide 🔗 [Download uv
 
 ## 📌 3. Check if Claude Desktop is Installed
 
-If Claude Desktop is not installed, follow the instructions in the official Claude installation guide.
+If Claude Desktop is not installed, follow the official installation guide 🔗 [Download Claude Desktop](https://claude.ai/) .
 
 ## 📌 4. Check if Git is Installed (optional)
 
