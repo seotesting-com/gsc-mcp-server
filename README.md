@@ -1,4 +1,5 @@
-# 🚀 Introduction: Setting Up MCP Server  
+# Google Search Console MCP Server
+## 🚀 Introduction: Setting Up MCP Server  
 
 In this tutorial, we’ll walk you through the process of setting up your own MCP [Model Context Protocol](https://modelcontextprotocol.io/introduction) server, adding it to Claude Desktop, and integrating it with Google Search Console (GSC) data. This will allow you to compare time periods to identify SEO improvements, generate visual reports like bar charts and line graphs, and uncover optimization opportunities by analyzing click-through rates, impressions, and ranking shifts.
 
