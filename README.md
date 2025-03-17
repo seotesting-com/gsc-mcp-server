@@ -202,6 +202,9 @@ Add the path to your JSON credentials file and run the following command:
 ```bash
 mcp install server.py -v GOOGLE_APPLICATION_CREDENTIALS=<path to credentials file>
 ```
+
+Make sure you replace `<path to credentials file>` with the path to your JSON credentials file eg. `C:\Users\Me\Downloads\credentials.json` . 
+
 ### 5. Restart Claude Desktop
 
 You may need to end Claude tasks in the task manager. 
