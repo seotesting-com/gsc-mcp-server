@@ -192,7 +192,8 @@ You may need to end Claude tasks in the task manager.
 Open Claude Desktop. If the MCP server has been configured correctly, you should be able to see 5 additional tools available in the chat box:
 ![image](https://github.com/user-attachments/assets/8fe45b5b-afc1-4c39-849d-853297cab1d6)
 
-You can use the tools by asking Claude to perform various search console analytics tasks:
+You can use the tools by asking Claude to perform various search console analytics tasks. Before invoking a tool, Claude will ask permission. You should click one of the 'allow' options to use the MCP server:
+![image](https://github.com/user-attachments/assets/6b63b312-c1c2-46ff-ab75-b3d640fe6a2a)
 
 ### Getting Started Prompts
 
@@ -227,9 +228,6 @@ You can use the tools by asking Claude to perform various search console analyti
 - "Show me which countries have the highest growth potential based on impressions vs. clicks"
 - "Analyze the correlation between average position and CTR for my top 100 queries"
 - "Generate a prioritized list of optimization opportunities based on potential traffic gains"
-
-Before invoking a tool, Claude will ask permission. You should click one of the 'allow' options to use the MCP server:
-![image](https://github.com/user-attachments/assets/6b63b312-c1c2-46ff-ab75-b3d640fe6a2a)
 
 ## Available Tools
 
@@ -283,3 +281,19 @@ Parameters:
 - end_date: End date in YYYY-MM-DD format
 - interval: Time interval for grouping (day, week, month)
 ```
+
+# 🛠 Troubleshooting
+If you encounter any issues while setting up or using the MCP server, try the following solutions:
+
+## 1️⃣ Restart Claude Desktop
+Sometimes, tools don’t appear immediately. Restart Claude Desktop and try again.
+You may need to end the Claude process in Task Manager (Windows) or Activity Monitor (Mac) before restarting.
+## 2️⃣ Wait a Few Minutes
+After setting up the MCP server, the new tools might take a few minutes to load.
+If they don’t appear right away, wait a few minutes and try again.
+## 3️⃣ Check the JSON Credentials File
+Ensure the service account JSON file is in an accessible folder.
+Avoid placing it in a restricted or admin-only folder (e.g., C:\Program Files\ on Windows or ~/Library/ on macOS).
+If necessary, move it to a more accessible location like your Documents or Desktop folder.
+
+If you're still having issues, retrace your steps and ensure everything is set up correctly. 🚀
