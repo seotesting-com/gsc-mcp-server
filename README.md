@@ -192,9 +192,11 @@ You may need to end Claude tasks in the task manager.
 # 🎯 Part 4 - Get Search Console Insights 
 
 Open Claude Desktop. If the MCP server has been configured correctly, you should be able to see 5 additional tools available in the chat box:
+
 ![image](https://github.com/user-attachments/assets/8fe45b5b-afc1-4c39-849d-853297cab1d6)
 
 You can use the tools by asking Claude to perform various search console analytics tasks. Before invoking a tool, Claude will ask permission. You should click one of the 'allow' options to use the MCP server:
+
 ![image](https://github.com/user-attachments/assets/6b63b312-c1c2-46ff-ab75-b3d640fe6a2a)
 
 ### Getting Started Prompts
