@@ -318,7 +318,7 @@ If they don’t appear right away, wait a few minutes and try again.
 Ensure the service account JSON file is in an accessible folder.
 Avoid placing it in a restricted or admin-only folder (e.g., C:\Program Files\ on Windows or ~/Library/ on macOS).
 If necessary, move it to a more accessible location like your Documents or Desktop folder.
-## 3️⃣ Check the Claude configuration
+## :four: Check the Claude configuration
 Go to **File => Settings** and click on the **Developer** tab. When you click on **Search Console Analytics**, it should display a status of 'running'. If not, there may be an error message providing details of what is causing the connection issue.
 ![image](https://github.com/user-attachments/assets/acfd8ea2-17d8-4d01-8132-18a913b99766)
 
@@ -352,5 +352,28 @@ Click on **Edit Config** and open **'claude_desktop_config.json'** in a text edi
 ```
 
 If it contains something else, paste this data into file and make sure you update the file paths for the server.py file and the credentials file. Make sure to escape backslash characters (as shown). Restart Claude.
+
+## Mac Users: Fixing "spawn uv ENOENT" Error
+If you see the error **"spawn uv ENOENT"** when opening Claude Desktop, it means that uv is either not installed or not found in the system path. If uv is installed, you can try adding the full path to the claude config.
+
+### 1️⃣ Update the Claude Desktop Configuration
+Open **Claude Desktop** and go to **File > Settings > Developer**.
+Click **"Search Console Analytics"**, then select **Edit Config**.
+Locate the `"command": "uv"` entry in **claude_desktop_config.json**.
+Replace "uv" with the full path to uv, which is usually: `"/Users/YOURUSERPROFILENAME/.local/bin/uv"`
+
+Run this command to get the installation path of uv: 
+```sh
+which uv
+```
+
+Save the file and restart Claude Desktop.
+
+### 2️⃣ Try Another Installation Method for uv
+If the above method does not work, uv may not be installed correctly. Try installing it using Homebrew:
+
+```sh
+brew install uv
+```
 
 If you're still having issues, retrace your steps and ensure everything is set up correctly. 🚀
