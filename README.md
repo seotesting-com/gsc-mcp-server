@@ -1,6 +1,8 @@
 # 🚀 Introduction: Setting Up MCP Server  
 
-In this tutorial, we’ll walk you through the process of setting up your own MCP [Model Context Protocol](https://modelcontextprotocol.io/introduction) server, adding it to Claude Desktop, and integrating it with Google Search Console (GSC) data.
+In this tutorial, we’ll walk you through the process of setting up your own MCP [Model Context Protocol](https://modelcontextprotocol.io/introduction) server, adding it to Claude Desktop, and integrating it with Google Search Console (GSC) data. This will allow you to compare time periods to identify SEO improvements, generate visual reports like bar charts and line graphs, and uncover optimization opportunities by analyzing click-through rates, impressions, and ranking shifts.
+
+![image](https://github.com/user-attachments/assets/691fb2d0-4d37-4c16-aee6-98931dfbcc7c)
 
 Let’s get started! 🚀
 
@@ -12,7 +14,7 @@ Let’s get started! 🚀
 
 By the end of this guide, you'll be able to run queries, visualize data, and optimize your website’s search performance with ease. Let's get started! 🚀
 
-## 🔹 What You Need to Know Before Starting
+## 🔹 What You Need to Know
 This tutorial is designed to be beginner-friendly, and you don’t need any advanced technical skills. However, you should be comfortable running commands in the command line (also known as the terminal or command prompt).
 
 Throughout this guide, you'll enter commands like:
@@ -23,12 +25,12 @@ git clone <repository-url>
 ```
 If you’ve never used the command line before, don’t worry! Just follow the instructions step by step, and you'll be good to go.
 
-That’s all you need—let’s get started! 🚀
+That’s all you need— let’s get started! 🚀
 ---
 
-# 🎯 Part 1 - Generate a JSON Credentials File for Google Cloud Console  
+# 🎯 Part 1 - Generate a JSON Credentials File
 
-Follow these steps to create and download a **service account JSON key** from Google Cloud Console.  
+Follow these steps to create and download a **service account JSON key** from Google Cloud Console.  If you already have a JSON credentials file, you can skip this part.
 
 
 ## 📌 1. Go to Google Cloud Console  
@@ -51,8 +53,8 @@ Follow these steps to create and download a **service account JSON key** from Go
 - Find Google Search Console API (you may need to search at the top)
 ![image](https://github.com/user-attachments/assets/891eb3e2-5370-4770-a676-423d4c9fc437)
 
-- Click 'Enable'
-- Return to the dashboard (click the Google Cloud icon)
+- Click **"Enable"**
+- Return to the dashboard (click the **"Google Cloud"** icon)
 
 
 ## 📌 3. Open the IAM & Admin Section  
@@ -84,7 +86,7 @@ Follow these steps to create and download a **service account JSON key** from Go
 
 ---
 
-# 🎯 Part 2 - Check that All Necessary Tools Are Installed  
+# 🎯 Part 2 - Install Required Tools
 
 Before you begin working with the project, ensure that you have the necessary tools installed. Follow these steps to check if everything is ready.
 
