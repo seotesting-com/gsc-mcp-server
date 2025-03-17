@@ -47,7 +47,7 @@ Follow these steps to create and download a **service account JSON key** from Go
 
 #### Enable Search Console API
 - Make sure your new project is selected 
-- Click on APIs and Services:
+- Click on **APIs and Services**:
 ![image](https://github.com/user-attachments/assets/75a33e90-b552-44a0-ab9e-8fd040762325)
 
 - Find Google Search Console API (you may need to search at the top)
@@ -153,8 +153,8 @@ If Git is installed, you will see the version number. If not, you can still down
 Open a new terminal in the folder where the files will be downloaded to. Run the following commands:
 
 ```bash
-git clone <enter-repository-url>
-cd <repository-name>
+git clone https://github.com/seotesting-com/gsc-mcp-server.git
+cd gsc-mcp-server
 ```
 
 #### If you don't have Git installed:
@@ -297,5 +297,9 @@ If they don’t appear right away, wait a few minutes and try again.
 Ensure the service account JSON file is in an accessible folder.
 Avoid placing it in a restricted or admin-only folder (e.g., C:\Program Files\ on Windows or ~/Library/ on macOS).
 If necessary, move it to a more accessible location like your Documents or Desktop folder.
+## 3️⃣ Check the Claude configuration
+Go to **File => Settings** and click on the **Developer** tab. When you click on **Search Console Analytics**, it should display a status of 'running'. If not, there may be an error message providing details of what is causing the connection issue.
+![image](https://github.com/user-attachments/assets/acfd8ea2-17d8-4d01-8132-18a913b99766)
+
 
 If you're still having issues, retrace your steps and ensure everything is set up correctly. 🚀
