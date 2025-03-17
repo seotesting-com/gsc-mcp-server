@@ -85,6 +85,17 @@ Follow these steps to create and download a **service account JSON key** from Go
 5. **✅ The JSON file will download automatically.**  
 6. Copy the path of JSON file (right click + 'Copy as path')
 
+## 📌 8. Add the Service Account to Google Search Console
+1. Open [Google Search Console](https://search.google.com/search-console).
+2. Select the website property.
+3. Click **Settings** (bottom left).
+4. Under **Users and Permissions**, click **Add User**.
+5. Enter the service account email (from step 4).
+6. Assign permissions:
+    - Restricted (view data only).
+    - Full (view & manage property).
+7. Click **Add**.
+
 ---
 
 # 🎯 Part 2 - Install Required Tools
