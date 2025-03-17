@@ -177,7 +177,14 @@ uv venv
 source .venv/bin/activate
 ```
 
-### 3. Install MCP Server 
+### 3. Install Dependencies
+
+```bash
+# Windows/macOS/Linux
+uv sync
+```
+
+### 4. Install MCP Server 
 
 Add the path to your JSON credentials file and run the following command:
 
@@ -304,5 +311,35 @@ If necessary, move it to a more accessible location like your Documents or Deskt
 Go to **File => Settings** and click on the **Developer** tab. When you click on **Search Console Analytics**, it should display a status of 'running'. If not, there may be an error message providing details of what is causing the connection issue.
 ![image](https://github.com/user-attachments/assets/acfd8ea2-17d8-4d01-8132-18a913b99766)
 
+Click on **Edit Config** and open **'claude_desktop_config.json'** in a text editor. It should contain:
+
+```sh
+{
+  "mcpServers": {
+    "Search Console Analytics": {
+      "command": "uv",
+      "args": [
+        "run",
+        "--with",
+        "google-api-python-client",
+        "--with",
+        "google-auth",
+        "--with",
+        "mcp[cli]",
+        "--with",
+        "pandas",
+        "mcp",
+        "run",
+        "C:\\Documents\\gsc-mcp-server\\server.py"
+      ],
+      "env": {
+        "GOOGLE_APPLICATION_CREDENTIALS": "C:\\Users\\Path\\To\\Credentials\\gscaccess-credentials.json"
+      }
+    }
+  }
+}
+```
+
+If it contains something else, paste this data into file and make sure you update the file paths for the server.py file and the credentials file. Make sure to escape backslash characters (as shown). Restart Claude.
 
 If you're still having issues, retrace your steps and ensure everything is set up correctly. 🚀
