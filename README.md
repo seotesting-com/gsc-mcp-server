@@ -1,7 +1,7 @@
 # Google Search Console MCP Server
 ## 🚀 Introduction: Setting Up MCP Server  
 
-In this tutorial, we’ll walk you through the process of setting up your own MCP [Model Context Protocol](https://modelcontextprotocol.io/introduction) server, adding it to Claude Desktop, and integrating it with Google Search Console (GSC) data. This will allow you to compare time periods to identify SEO improvements, generate visual reports like bar charts and line graphs, and uncover optimization opportunities by analyzing click-through rates, impressions, and ranking shifts.
+In this tutorial, we’ll walk you through the process of setting up your own MCP [Model Context Protocol](https://modelcontextprotocol.io/introduction) server, adding it to Claude Desktop, and integrating it with Google Search Console (GSC) data. This will allow you to compare time periods to identify SEO improvements, generate visual reports like bar charts and line graphs, and uncover optimization opportunities by analyzing click-through rates, impressions, and ranking shifts.  
 
 ![image](https://github.com/user-attachments/assets/691fb2d0-4d37-4c16-aee6-98931dfbcc7c)
 
@@ -13,7 +13,7 @@ Let’s get started! 🚀
 3. **Set Up the MCP Server** – Clone the repository, configure your environment, and install the MCP server.  
 4. **Enable Search Console Insights** – Verify that the MCP server is running correctly in Claude Desktop and start using advanced search analytics tools.  
 
-By the end of this guide, you'll be able to run queries, visualize data, and optimize your website’s search performance with ease. Let's get started! 🚀
+By the end of this guide, **Claude will automatically connect to the MCP server** and you'll be able to run queries, visualize data, and optimize your website’s search performance with ease. Let's get started! 🚀
 
 ## 🔹 What You Need to Know
 This tutorial is designed to be beginner-friendly, and you don’t need any advanced technical skills. However, you should be comfortable running commands in the command line (also known as the terminal or command prompt).
@@ -117,7 +117,7 @@ python3 --version
 
 If Python is installed, you will see the version number. If not, download and install it from 🔗 [Download Python](https://www.python.org/downloads/)  
 
-## 📌 3. Check if pip is Installed
+## 📌 2. Check if pip is Installed
 pip is the package manager for Python. To check if it's installed, run the following command:
 
 ### On **Windows**:
@@ -131,7 +131,7 @@ pip3 --version
 ```
 If pip is not installed, follow the official installation guide 🔗 [Download pip](https://pip.pypa.io/en/stable/installation/)
 
-## 📌 2. Check if uv is Installed
+## 📌 3. Check if uv is Installed
 uv is a Python package and project manager. To check if it's installed, run the following command:
 
 ### On **Linux/macOS/Windows**:
@@ -140,11 +140,11 @@ uv --version
 ```
 If uv is not installed, follow the official installation guide 🔗 [Download uv](https://docs.astral.sh/uv/getting-started/installation/)
 
-## 📌 3. Check if Claude Desktop is Installed
+## 📌 4. Check if Claude Desktop is Installed
 
 If Claude Desktop is not installed, follow the official installation guide 🔗 [Download Claude Desktop](https://claude.ai/) .
 
-## 📌 4. Check if Git is Installed (optional)
+## 📌 5. Check if Git is Installed (optional)
 
 Check if Git is installed on your system by running the following command:
 
@@ -322,7 +322,7 @@ Ensure the service account JSON file is in an accessible folder.
 Avoid placing it in a restricted or admin-only folder (e.g., C:\Program Files\ on Windows or ~/Library/ on macOS).
 If necessary, move it to a more accessible location like your Documents or Desktop folder.
 ## :four: Check the Claude configuration
-Go to **File => Settings** and click on the **Developer** tab. When you click on **Search Console Analytics**, it should display a status of 'running'. If not, there may be an error message providing details of what is causing the connection issue.
+Go to **File => Settings** and click on the **Developer** tab. When you click on **Search Console Analytics**, it should display a status of 'running'. If not, there may be an error message providing details of what is causing the connection issue. If you cannot see the Settings as pictured below, make sure you have an up-to-date version of Claude Desktop: 🔗 [Download Claude Desktop](https://claude.ai/).
 ![image](https://github.com/user-attachments/assets/acfd8ea2-17d8-4d01-8132-18a913b99766)
 
 Click on **Edit Config** and open **'claude_desktop_config.json'** in a text editor. It should contain:
@@ -363,12 +363,14 @@ If you see the error **"spawn uv ENOENT"** when opening Claude Desktop, it means
 Open **Claude Desktop** and go to **File > Settings > Developer**.
 Click **"Search Console Analytics"**, then select **Edit Config**.
 Locate the `"command": "uv"` entry in **claude_desktop_config.json**.
-Replace "uv" with the full path to uv, which is usually: `"/Users/YOURUSERPROFILENAME/.local/bin/uv"`
+Replace "uv" with the full path to uv, which is usually: `/Users/YOURUSERPROFILENAME/.local/bin/uv`
 
 Run this command to get the installation path of uv: 
 ```sh
-which uv
+which -a uv
 ```
+
+This command will display all the paths to the installations of uv you have. If the only path you can see is `/Library/Frameworks/Python.framework/Versions/3.**/bin/uv` , you need to 🔗 [Download uv](https://docs.astral.sh/uv/getting-started/installation/) and go back to Part 3. 
 
 Save the file and restart Claude Desktop.
 
